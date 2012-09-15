@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = "html_skeleton"
-  s.version = "0.3.4"
+  s.version = "0.3.6"
 
   s.author   = 'Dittmar Krall'
   s.email    = 'dittmar.krall@matique.de'
@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
 
     An example in a view: <%= HtmlSkeleton.new.calendar %>
 
-    The calendar/table may be embelished by user supplied Proc.new's,
+    The calendar/table may be embelished by user supplied lambda's,
     e.g. for inserting link_to.
   DESCRIPTION
 
@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
 	     'lib/html_skeleton_table.rb',
 	     'README.md', 'MIT-LICENSE']
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
-#  s.require_paths = ["lib"]
+  s.require_paths = ["lib"]
 
   s.add_development_dependency 'rake'
 end
