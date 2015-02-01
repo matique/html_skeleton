@@ -2,13 +2,13 @@
 
 Gem::Specification.new do |s|
   s.name = "html_skeleton"
-  s.version = "0.3.6"
+  s.version = "0.4.1"
 
   s.author   = 'Dittmar Krall'
   s.email    = 'dittmar.krall@matique.de'
   s.homepage = 'http://matique.de'
 
-  s.summary  = "A simple helper for creating HTML calendars and tables"
+  s.summary  = 'A simple helper for creating HTML calendars and tables'
   s.description = <<-DESCRIPTION
     A simple helper for creating HTML calendars and tables.
 
@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
 	     'lib/html_skeleton_table.rb',
 	     'README.md', 'MIT-LICENSE']
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
-  s.require_paths = ["lib"]
+  s.require_paths = ['lib']
 
   s.add_development_dependency 'rake'
 end

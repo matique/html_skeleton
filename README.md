@@ -28,8 +28,8 @@ In the example below clicking a day triggers an action.
 Examples
 --------
     HtmlSkeleton.new.calendar                    # calendar for current year
-    HtmlSkeleton.new.calendar :year = 2012       # calendar for year 2012
-    HtmlSkeleton.new.calendar :year = 2012, :month => 8  # calendar for August 2012
+    HtmlSkeleton.new.calendar year: 2012       # calendar for year 2012
+    HtmlSkeleton.new.calendar year: 2012, month: 8  # calendar for August 2012
 
     HtmlSkeleton.new.calendar {|date|
       link ="/#{controller_name}/toggle/#{@resource.id}?date=#{date}"
@@ -40,15 +40,15 @@ Examples
 
 Default Options
 ---------------
-    :year        => DateTime.now.year,
-    :title       => DateTime.now.year,
-    :rows        => 3,
-    :calendar_class => 'skeleton',
-    :day_names   => Date::DAYNAMES.dup,
-    :month_names => Date::MONTHNAMES,
-    :abbrev      => (0..1),
-    :cell_proc   => block || lambda {|d| d.day.to_s},
-    :first_day_of_week => 1
+    year:        DateTime.now.year,
+    title:       DateTime.now.year,
+    rows:        3,
+    calendar_class: 'skeleton',
+    day_names:   Date::DAYNAMES.dup,
+    month_names: Date::MONTHNAMES,
+    abbrev:      (0..1),
+    cell_proc:   block || lambda {|d| d.day.to_s},
+    first_day_of_week: 1
 
 
 Inspired by calendar_helper:
@@ -74,28 +74,28 @@ Examples
     }
 
     HtmlSkeleton.new.table(@users, %w{email address},
-		:th_attribute => lambda { |col| col.name },
-		:legend => 'Users') { |row, col|
+		th_attribute: lambda { |col| col.name },
+		legend: 'Users') { |row, col|
       "<td>#{ row.send(col) }</td>"
     }
 
     stripes = %w{odd even}
     proc = lambda{ |row| k = stripes.shift; stripes << k; %Q{class="#{k}"} }
     HtmlSkeleton.new.table(@users, %w{email address},
-		:tr_attribute => proc,
-		:legend => 'Users') { |row, col|
+		tr_attribute: proc,
+		legend: 'Users') { |row, col|
       "<td>#{ row.send(col) }</td>"
     }
 
 Default Options
 ---------------
-    :legend => nil,
-    :col_legend   => lambda(&:to_s),
-    :row_legend   => lambda(&:id),
-    :th_attribute => lambda { |col| nil },
-    :tr_attribute => lambda { |row| nil },
-    :table_class  => 'skeleton',
-    :cell_proc    => block || lambda {|row, col| "<td>#{row} #{col}</td>"}
+    legend: nil,
+    col_legend:   lambda(&:to_s),
+    row_legend:   lambda(&:id),
+    th_attribute: lambda { |col| nil },
+    tr_attribute: lambda { |row| nil },
+    table_class:  'skeleton',
+    cell_proc:    block || lambda {|row, col| "<td>#{row} #{col}</td>"}
 
 
 Curious?
@@ -109,4 +109,4 @@ Curious?
     github.com/watu/table_builder
     ruby-toolbox.com/projects/tableasy
 
-Copyright (c) 2012 [Dittmar Krall], released under the MIT license.
+Copyright (c) 2012-2015 [Dittmar Krall], released under the MIT license.

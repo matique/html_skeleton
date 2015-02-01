@@ -29,14 +29,14 @@ class HtmlSkeleton
   def set_calendar_options(options, &block)
     year = DateTime.now.year
     @options = {
-      :year        => year,
-      :title       => year,
-      :rows        => 3,
-      :calendar_class => 'skeleton',
-      :month_names => Date::MONTHNAMES,
-      :abbrev      => (0..1),
-      :cell_proc   => block || lambda {|d| d.day.to_s},
-      :first_day_of_week => 1
+      year:        year,
+      title:       year,
+      rows:        3,
+      calendar_class: 'skeleton',
+      month_names: Date::MONTHNAMES,
+      abbrev:      (0..1),
+      cell_proc:   block || lambda {|d| d.day.to_s},
+      first_day_of_week: 1
     }.merge options
 
     names = options[:day_names] || Date::DAYNAMES.dup
@@ -51,14 +51,14 @@ class HtmlSkeleton
 
   def set_table_options(options, &block)
     @options = {
-      :legend => nil,
-      :col_legend => lambda(&:to_s),
-      :row_legend => lambda(&:id),
-      :th_attribute => lambda { |col| nil },
-      :tr_attribute => lambda { |row| nil },
+      legend: nil,
+      col_legend: lambda(&:to_s),
+      row_legend: lambda(&:id),
+      th_attribute: lambda { |col| nil },
+      tr_attribute: lambda { |row| nil },
 
-      :table_class => 'skeleton',
-      :cell_proc   => block || lambda {|row, col| "<td>#{row} #{col}</td>"},
+      table_class: 'skeleton',
+      cell_proc:   block || lambda {|row, col| "<td>#{row} #{col}</td>"},
     }.merge options
   end
 

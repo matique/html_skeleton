@@ -29,7 +29,7 @@ class HtmlSkeletonCalendarTest < Test::Unit::TestCase
 
   def test_custom_css_class
     klass = 'custom'
-    cal = a_calendar(:calendar_class => klass)
+    cal = a_calendar(calendar_class: klass)
     assert_css_class(cal, 'table', klass)
   end
 
@@ -37,11 +37,11 @@ class HtmlSkeletonCalendarTest < Test::Unit::TestCase
     cal = a_calendar
     assert_match %r{>Mo<}, cal
     assert_not_match %r{>Monday<}, cal
-    assert_match %r{>Monday<}, a_calendar(:abbrev => 0..5)
+    assert_match %r{>Monday<}, a_calendar(abbrev: 0..5)
   end
 
   def test_cell_block
-    cal = HtmlSkeleton.new.calendar(:year => 2012) { |d|
+    cal = HtmlSkeleton.new.calendar(year: 2012) { |d|
 		d.day == 15 ? '<bingo></bingo>' : d.day.to_s
 	      }
     assert_tag_count(cal, 'bingo', 12)
@@ -54,22 +54,22 @@ class HtmlSkeletonCalendarTest < Test::Unit::TestCase
 
   def test_first_day_of_week
     assert_match %r{<tr class="dayName">\s*<th [^>]*scope='col'><abbr title='Monday'>Mo}, a_calendar
-    assert_match %r{<tr class="dayName">\s*<th [^>]*scope='col'><abbr title='Sunday'>Su}, a_calendar(:first_day_of_week => 0)
+    assert_match %r{<tr class="dayName">\s*<th [^>]*scope='col'><abbr title='Sunday'>Su}, a_calendar(first_day_of_week: 0)
   end
 
 
  private
   def a_calendar(options = {})
-    HtmlSkeleton.new.calendar({:year => 2012}.merge options)
+    HtmlSkeleton.new.calendar({year: 2012}.merge options)
   end
 
   def a_month_calendar(options = {})
-    HtmlSkeleton.new.calendar({:year => 2012, :month => 8}.merge options)
+    HtmlSkeleton.new.calendar({year: 2012, month: 8}.merge options)
   end
 
   def this_month_calendar(options = {})
     now = Time.now
-    HtmlSkeleton.new.calendar({ :year => now.year, :month => now.month }.merge options)
+    HtmlSkeleton.new.calendar({ year: now.year, month: now.month }.merge options)
   end
 
 end

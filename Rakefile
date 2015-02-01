@@ -1,9 +1,11 @@
-require 'bundler'
-Bundler::GemHelper.install_tasks
-
+require 'rake'
 require 'rake/testtask'
+require 'bundler/gem_tasks'
+
 Rake::TestTask.new do |t|
-  t.libs << 'lib'
-  t.test_files = FileList['test/*_test.rb']
+  t.libs.push 'test'
+  t.pattern = 'test/*_test.rb'
 end
-task :default => :test
+
+desc 'Default: run unit tests.'
+task default: :test

@@ -19,7 +19,7 @@ class HtmlSkeletonTableTest < Test::Unit::TestCase
 
   def test_custom_css_class
     klass = 'custom'
-    tab = a_table(:table_class => klass)
+    tab = a_table(table_class: klass)
     assert_css_class(tab, 'table', klass)
   end
 
@@ -37,7 +37,7 @@ class HtmlSkeletonTableTest < Test::Unit::TestCase
 
   def test_with_legend
     tab = HtmlSkeleton.new.table(users, %w{name email},
-	    :legend => 'Users' ) {|row, col|
+	    legend: 'Users' ) {|row, col|
 		  "<td>#{ row.send(col) }</td>"
     }
     assert_tag_count(tab, 'td', 6)
@@ -50,8 +50,8 @@ class HtmlSkeletonTableTest < Test::Unit::TestCase
     stripes = %w{odd even}
     proc = lambda{ |row| k = stripes.shift; stripes << k; %Q{class="#{k}"} }
     tab = HtmlSkeleton.new.table(users, %w{name email},
-	    :tr_attribute => proc,
-	    :legend => 'Users' )
+	    tr_attribute: proc,
+	    legend: 'Users' )
     assert_css_class(tab, 'tr', 'odd')
     assert_css_class(tab, 'tr', 'even')
   end
