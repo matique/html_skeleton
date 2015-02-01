@@ -44,8 +44,8 @@ class HtmlSkeleton
 
     @day_header = names.collect { |day|
       abbr = day[@options[:abbrev]]
-      str = abbr == day ? day : %Q{<abbr title='#{day}'>#{abbr}</abbr>}
-      %Q{<th scope='col'>#{str}</th>}
+      str = abbr == day ? day : %Q{<abbr title="#{day}">#{abbr}</abbr>}
+      %Q{<th scope="col">#{str}</th>}
     }.join('')
   end
 
