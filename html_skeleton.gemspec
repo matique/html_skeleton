@@ -7,6 +7,7 @@ Gem::Specification.new do |s|
   s.author   = 'Dittmar Krall'
   s.email    = 'dittmar.krall@matique.de'
   s.homepage = 'http://matique.de'
+  s.license  = 'MIT'
 
   s.summary  = 'A simple helper for creating HTML calendars and tables'
   s.description = <<-DESCRIPTION
@@ -25,5 +26,5 @@ Gem::Specification.new do |s|
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.require_paths = ['lib']
 
-  s.add_development_dependency 'rake'
+  s.add_development_dependency 'rake', '~> 0'
 end
