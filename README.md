@@ -42,6 +42,7 @@ Default Options
 ---------------
     :year        => DateTime.now.year,
     :title       => DateTime.now.year,
+    :rows        => 3,
     :calendar_class => 'skeleton',
     :day_names   => Date::DAYNAMES.dup,
     :month_names => Date::MONTHNAMES,

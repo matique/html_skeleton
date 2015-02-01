@@ -31,6 +31,7 @@ class HtmlSkeleton
     @options = {
       :year        => year,
       :title       => year,
+      :rows        => 3,
       :calendar_class => 'skeleton',
       :month_names => Date::MONTHNAMES,
       :abbrev      => (0..1),

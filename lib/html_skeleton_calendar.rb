@@ -6,7 +6,10 @@ class HtmlSkeleton
 
  protected
   def a_year(year)
-    rows, cols = 3, 4
+    rows = @options[:rows]
+    cols = 12 / rows
+    raise "html_skeleton_calendar: invalid rows" unless rows * cols == 12
+
     body = (0..rows - 1).collect {|y|
       str = (1..cols).collect {|x| "<td>#{a_month(year, y * cols + x)}</td>"}
       "<tr>#{str.join('')}</tr>"
