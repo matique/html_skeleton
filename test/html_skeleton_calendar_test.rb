@@ -53,8 +53,8 @@ class HtmlSkeletonCalendarTest < Test::Unit::TestCase
   end
 
   def test_first_day_of_week
-    assert_match %r{<tr class="dayName">\s*<th [^>]*scope='col'><abbr title='Monday'>Mo}, a_calendar
-    assert_match %r{<tr class="dayName">\s*<th [^>]*scope='col'><abbr title='Sunday'>Su}, a_calendar(first_day_of_week: 0)
+    assert_match %r{<tr class="dayName">\s*<th [^>]*scope="col"><abbr title="Monday">Mo}, a_calendar
+    assert_match %r{<tr class="dayName">\s*<th [^>]*scope="col"><abbr title="Sunday">Su}, a_calendar(first_day_of_week: 0)
   end
 
 
