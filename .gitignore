@@ -1,0 +1,9 @@
+.bundle/
+coverage/
+
+*.gem
+*.log
+*.lock
+**/*.gem
+**/*.log
+**/*.lock
