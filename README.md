@@ -109,4 +109,4 @@ Curious?
     github.com/watu/table_builder
     ruby-toolbox.com/projects/tableasy
 
-Copyright (c) 2012-2018 [Dittmar Krall], released under the MIT license.
+Copyright (c) 2012-2019 [Dittmar Krall], released under the MIT license.
