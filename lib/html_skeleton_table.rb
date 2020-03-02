@@ -2,7 +2,7 @@ require 'date'
 
 # table methods ######################################################
 class HtmlSkeleton
- protected
+  protected
   def table_header(cols)
     legend       = @options[:legend]
     th_attribute = @options[:th_attribute]
@@ -12,7 +12,7 @@ class HtmlSkeleton
     col_header = cols.collect { |col|
       "<th #{th_attribute.call(col)}>#{proc.call(col)}</th>"
     }.join
-    %Q{<thead><th class="legend">#{legend}</th>#{col_header}</thead>}
+    %(<thead><th class="legend">#{legend}</th>#{col_header}</thead>)
   end
 
   def table_body(rows, cols)
@@ -20,10 +20,10 @@ class HtmlSkeleton
     row_legend   = @options[:row_legend]
     tr_attribute = @options[:tr_attribute]
     rows.collect { |row|
-      rlegend = legend ? %Q{<td class="legend">#{row_legend.call(row)}</td>}
-		       : ''
+      rlegend = ''
+      rlegend = %(<td class="legend">#{row_legend.call(row)}</td>) if legend
       cells = table_row(row, cols)
-      %Q{<tr #{tr_attribute.call(row)}>#{rlegend}#{cells}</tr>}
+      %(<tr #{tr_attribute.call(row)}>#{rlegend}#{cells}</tr>)
     }.join("\n")
   end
 
@@ -31,5 +31,4 @@ class HtmlSkeleton
     cell_proc = @options[:cell_proc]
     cols.collect { |col|  cell_proc.call(row, col) }.join('')
   end
-
 end

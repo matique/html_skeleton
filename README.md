@@ -47,7 +47,7 @@ Default Options
     day_names:   Date::DAYNAMES.dup,
     month_names: Date::MONTHNAMES,
     abbrev:      (0..1),
-    cell_proc:   block || lambda {|d| d.day.to_s},
+    cell_proc:   block || ->(d) { d.day.to_s},
     first_day_of_week: 1
 
 
@@ -80,7 +80,7 @@ Examples
     }
 
     stripes = %w{odd even}
-    proc = lambda{ |row| k = stripes.shift; stripes << k; %Q{class="#{k}"} }
+    proc = ->(row) { k = stripes.shift; stripes << k; %Q{class="#{k}"} }
     HtmlSkeleton.new.table(@users, %w{email address},
 		tr_attribute: proc,
 		legend: 'Users') { |row, col|
@@ -92,10 +92,10 @@ Default Options
     legend: nil,
     col_legend:   lambda(&:to_s),
     row_legend:   lambda(&:id),
-    th_attribute: lambda { |col| nil },
-    tr_attribute: lambda { |row| nil },
+    th_attribute: ->(col) { nil },
+    tr_attribute: ->(row) { nil },
     table_class:  'skeleton',
-    cell_proc:    block || lambda {|row, col| "<td>#{row} #{col}</td>"}
+    cell_proc:    block || ->(row, col) { "<td>#{row} #{col}</td>"}
 
 
 Curious?

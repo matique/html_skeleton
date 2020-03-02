@@ -7,35 +7,33 @@ class HtmlSkeleton
 
   def calendar(options = {}, &block)
     set_calendar_options(options, &block)
-    frame = @options[:month] ? 'div' : 'table'
-    body  = @options[:month] ?
-		a_month(@options[:year], @options[:month]) :
-		a_year(@options[:year])
-    %Q{<#{frame} class="#{@options[:calendar_class]}"> #{body} </#{frame}>}
+    month = @options[:month]
+    frame = month ? 'div' : 'table'
+    body  = month ? a_month(@options[:year], month) : a_year(@options[:year])
+    %(<#{frame} class="#{@options[:calendar_class]}"> #{body} </#{frame}>)
   end
 
   def table(rows, cols, options = {}, &block)
     set_table_options(options, &block)
-    <<-EOS
-<table class="#{@options[:table_class]}">
-  #{table_header(cols)}
-  #{table_body(rows, cols)}
-</table>
-    EOS
+    <<~TABLE
+      <table class="#{@options[:table_class]}">
+        #{table_header(cols)}
+        #{table_body(rows, cols)}
+      </table>
+    TABLE
   end
-
 
  protected
   def set_calendar_options(options, &block)
     year = DateTime.now.year
     @options = {
-      year:        year,
-      title:       year,
-      rows:        3,
+      year: year,
+      title: year,
+      rows: 3,
       calendar_class: 'skeleton',
       month_names: Date::MONTHNAMES,
-      abbrev:      (0..1),
-      cell_proc:   block || lambda {|d| d.day.to_s},
+      abbrev: (0..1),
+      cell_proc: block || ->(d) { d.day.to_s },
       first_day_of_week: 1
     }.merge options
 
@@ -44,8 +42,8 @@ class HtmlSkeleton
 
     @day_header = names.collect { |day|
       abbr = day[@options[:abbrev]]
-      str = abbr == day ? day : %Q{<abbr title="#{day}">#{abbr}</abbr>}
-      %Q{<th scope="col">#{str}</th>}
+      str = abbr == day ? day : %(<abbr title="#{day}">#{abbr}</abbr>)
+      %(<th scope="col">#{str}</th>)
     }.join('')
   end
 
@@ -54,12 +52,11 @@ class HtmlSkeleton
       legend: nil,
       col_legend: lambda(&:to_s),
       row_legend: lambda(&:id),
-      th_attribute: lambda { |col| nil },
-      tr_attribute: lambda { |row| nil },
+      th_attribute: ->(_col) { nil },
+      tr_attribute: ->(_row) { nil },
 
       table_class: 'skeleton',
-      cell_proc:   block || lambda {|row, col| "<td>#{row} #{col}</td>"},
+      cell_proc: block || ->(row, col) { "<td>#{row} #{col}</td>" }
     }.merge options
   end
-
 end
