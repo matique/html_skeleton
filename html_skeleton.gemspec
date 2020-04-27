@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = "html_skeleton"
-  s.version = '0.5.0'
+  s.version = '0.5.1'
 
   s.author   = 'Dittmar Krall'
   s.email    = 'dittmar.krall@matique.de'
