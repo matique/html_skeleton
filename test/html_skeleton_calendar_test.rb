@@ -7,7 +7,6 @@ class HtmlSkeletonCalendarTest < Test::Unit::TestCase
 
   def test_html_calendar
     cal = a_calendar
-#p [100, cal]
     assert_not_nil cal
     assert_tag_count(cal, 'tr', 92)
     assert_tag_count(cal, 'table', 13)
@@ -17,7 +16,6 @@ class HtmlSkeletonCalendarTest < Test::Unit::TestCase
 
   def test_month_calendar
     cal = a_month_calendar
-#p [101, cal]
     assert_not_nil cal
     assert_tag_count(cal, 'div', 1)
     assert_tag_count(cal, 'table', 1)
@@ -41,8 +39,8 @@ class HtmlSkeletonCalendarTest < Test::Unit::TestCase
 
   def test_cell_block
     cal = HtmlSkeleton.new.calendar(year: 2012) { |d|
-		d.day == 15 ? '<bingo></bingo>' : d.day.to_s
-	      }
+                d.day == 15 ? '<bingo></bingo>' : d.day.to_s
+              }
     assert_tag_count(cal, 'bingo', 12)
   end
 

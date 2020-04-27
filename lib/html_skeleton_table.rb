@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'date'
 
 # table methods ######################################################
@@ -6,7 +8,7 @@ class HtmlSkeleton
   def table_header(cols)
     legend       = @options[:legend]
     th_attribute = @options[:th_attribute]
-    return ''  unless legend
+    return '' unless legend
 
     proc = @options[:col_legend]
     col_header = cols.collect { |col|

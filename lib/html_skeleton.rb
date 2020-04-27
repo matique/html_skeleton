@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'date'
 require 'html_skeleton_calendar'
 require 'html_skeleton_table'

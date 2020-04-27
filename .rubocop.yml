@@ -1,69 +1,18 @@
-# rubocop --auto-gen-config
-# rubocop
-# rubocop:disable all
-
-#inherit_from: .rubocop_todo.yml
+inherit_from:
+  - ~/configs/.rubocop.yml
 
 AllCops:
   Include:
     - 'lib/**/*.rb'
-    - 'test/**/*_test.rb'
-    - '**/*.gemfile'
-
   Exclude:
-    - 'gemfiles/*'
     - 'test/**/*'
-#    - !ruby/regexp /old_and_unused\.rb$/
-
-Bundler/OrderedGems:
-  Exclude:
-    - 'Gemfile'
 
 Layout/AccessModifierIndentation:
   Enabled: false
-Layout/CommentIndentation:
-  Enabled: false
-Layout/IndentationConsistency:
-  Enabled: false
-Layout/EmptyLines:
-  Enabled: false
 Layout/EmptyLinesAroundAccessModifier:
   Enabled: false
-Layout/EmptyLinesAroundModuleBody:
-  Enabled: false
-Layout/ExtraSpacing:
-  Enabled: false
-Layout/LineLength:
+Layout/HashAlignment:
   Enabled: false
 
 Metrics/AbcSize:
   Enabled: false
-Metrics/MethodLength:
-  Enabled: false
-
-Naming/AccessorMethodName:
-  Enabled: false
-Naming/MemoizedInstanceVariableName:
-  Enabled: false
-Naming/MethodParameterName:
-  Enabled: false
-
-Security/YAMLLoad:
-  Enabled: false
-Style/HashEachMethods:
-  Enabled: false
-Style/HashTransformKeys:
-  Enabled: false
-Style/HashTransformValues:
-  Enabled: false
-Style/BlockDelimiters:
-  Enabled: false
-Style/ClassAndModuleChildren:
-  Enabled: false
-Style/Documentation:
-  Enabled: false
-Style/FrozenStringLiteralComment:
-  Enabled: false
-Style/WhenThen:
-  Exclude:
-    - '.watchr'

@@ -16,9 +16,8 @@ end
 
 def run_it(type, file)
   case type
-  when 'test';  run %Q{ruby -I"lib:test" -rubygems #{file}}
-#  when 'test';  run %Q{rails test #{file}}
-  when 'spec';  run %Q{spring rspec -X #{file}}
+  when 'test';  run %(ruby -I"lib:test" #{file})
+#  when 'spec';  run %(spring rspec -X #{file})
   else;         puts "#{H} unknown type: #{type}, file: #{file}"
   end
 end
@@ -31,13 +30,13 @@ end
 
 def run_matching_files(base)
   base = base.split('_').first
-  %w{test spec}.each { |type|
+  %w[test spec].each { |type|
     files = Dir["#{type}/**/*.rb"].select { |file| file =~ /#{base}_.*\.rb/ }
     run_it type, files.join(' ')  unless files.empty?
   }
 end
 
-%w{test spec}.each { |type|
+%w[test spec].each { |type|
   watch("#{type}/#{type}_helper\.rb") { run_all_tests }
   watch('lib/.*\.rb')                 { run_all_tests }
   watch("#{type}/.*/*_#{type}\.rb")   { |match| run_it type, match[0] }

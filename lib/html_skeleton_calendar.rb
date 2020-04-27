@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'date'
 
 # calendar methods ###################################################
@@ -41,7 +43,7 @@ class HtmlSkeleton
     first = Date.civil(year, month, 1)
     last  = Date.civil(year, month, -1)
 
-    cal = '<tr>'
+    cal = '<tr>'.dup
     cal << '<td></td>' * days_between(first_weekday, first.wday)
     first.upto(last) { |cur|
       cal << a_day(cur, today, cell_proc)
@@ -56,7 +58,6 @@ class HtmlSkeleton
     attrs += ' weekendDay'  if weekend?(date)
     attrs += ' today'       if date == today
     "<td class=\"#{attrs}\">#{block.call(date)}</td>"
-#    "<td class=\"#{attrs}\">##</td>"
   end
 
   def weekend?(date)
