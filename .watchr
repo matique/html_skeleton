@@ -16,16 +16,15 @@ end
 
 def run_it(type, file)
   case type
-  when 'test';  run %(ruby -I"lib:test" #{file})
-#  when 'spec';  run %(spring rspec -X #{file})
+  when 'test';  run %(ruby -I test #{file})
+#  when 'spec';  run %(rspec -X #{file})
   else;         puts "#{H} unknown type: #{type}, file: #{file}"
   end
 end
 
 def run_all_tests
   puts "\n#{HH} Running all tests #{HH}\n"
-#  system "spring stop"
-  run "rake"
+  %w[test spec].each { |dir| run "rake #{dir}" if  File.exist?(dir) }
 end
 
 def run_matching_files(base)
@@ -40,10 +39,6 @@ end
   watch("#{type}/#{type}_helper\.rb") { run_all_tests }
   watch('lib/.*\.rb')                 { run_all_tests }
   watch("#{type}/.*/*_#{type}\.rb")   { |match| run_it type, match[0] }
-  watch("#{type}/data/(.*)\.rb") { |match|
-    m1 = match[1]
-    run_matching_files("#{type}/#{m1}/#{m1}_#{type}.rb")
-  }
 }
 
 # Ctrl-\ or ctrl-4
