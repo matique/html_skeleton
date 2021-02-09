@@ -1,5 +1,6 @@
 HtmlSkeleton
 ============
+[![Gem Version](https://badge.fury.io/rb/html_skeleton.png)](http://badge.fury.io/rb/html_skeleton)
 
 HtmlSkeleton provides the frame for a calendar or a table,
 i.e. no loops are required to build up the HTML structure.
