@@ -5,10 +5,7 @@ if ENV['COVERAGE']
   end
 end
 
-#require 'rails/test_help'
 #require 'minitest/autorun'
-##require 'minitest/benchmark'
-##require 'capybara/rails'
 
 class Test::Unit::TestCase
  private

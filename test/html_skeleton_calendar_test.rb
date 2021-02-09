@@ -3,7 +3,6 @@ require 'test/unit'
 require File.expand_path('../test_helper', __FILE__)
 require File.expand_path(File.dirname(__FILE__) + "../../lib/html_skeleton")
 
-
 class HtmlSkeletonCalendarTest < Test::Unit::TestCase
 
   def test_html_calendar
