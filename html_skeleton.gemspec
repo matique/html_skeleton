@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = "html_skeleton"
-  s.version = '0.5.1'
+  s.version = '0.5.2'
 
   s.author   = 'Dittmar Krall'
   s.email    = 'dittmar.krall@matique.de'
@@ -24,6 +24,8 @@ Gem::Specification.new do |s|
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.require_paths = ['lib']
 
+  s.metadata['source_code_uri'] = 'https://github.com/matique/html_skeleton'
+
   s.add_development_dependency 'bundler'
-  s.add_development_dependency 'rake', '>= 13'
+  s.add_development_dependency 'rake', '~> 13'
 end
