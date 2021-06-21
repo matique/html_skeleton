@@ -31,6 +31,6 @@ class HtmlSkeleton
 
   def table_row(row, cols)
     cell_proc = @options[:cell_proc]
-    cols.collect { |col|  cell_proc.call(row, col) }.join('')
+    cols.collect { |col|  cell_proc.call(row, col) }.join
   end
 end

@@ -14,11 +14,11 @@ class HtmlSkeleton
 
     body = (0..rows - 1).collect { |y|
       str = (1..cols).collect { |x| "<td>#{a_month(year, y * cols + x)}</td>" }
-      "<tr>#{str.join('')}</tr>"
+      "<tr>#{str.join}</tr>"
     }
     <<~THEAD
       <thead><th colspan="2">#{@options[:title]}</th></thead>
-      #{body.join('')}
+      #{body.join}
     THEAD
   end
 
@@ -43,7 +43,7 @@ class HtmlSkeleton
     first = Date.civil(year, month, 1)
     last  = Date.civil(year, month, -1)
 
-    cal = '<tr>'.dup
+    cal = +'<tr>'
     cal << '<td></td>' * days_between(first_weekday, first.wday)
     first.upto(last) { |cur|
       cal << a_day(cur, today, cell_proc)

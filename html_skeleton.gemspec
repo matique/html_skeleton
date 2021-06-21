@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = "html_skeleton"
-  s.version = '0.5.2'
+  s.version = '0.5.3' # 2021-06-21
 
   s.author   = 'Dittmar Krall'
   s.email    = 'dittmar.krall@matique.de'
@@ -27,5 +27,5 @@ Gem::Specification.new do |s|
   s.metadata['source_code_uri'] = 'https://github.com/matique/html_skeleton'
 
   s.add_development_dependency 'bundler'
-  s.add_development_dependency 'rake', '~> 13'
+  s.add_development_dependency 'rake'
 end

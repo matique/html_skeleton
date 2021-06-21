@@ -46,16 +46,16 @@ class HtmlSkeleton
       abbr = day[@options[:abbrev]]
       str = abbr == day ? day : %(<abbr title="#{day}">#{abbr}</abbr>)
       %(<th scope="col">#{str}</th>)
-    }.join('')
+    }.join
   end
 
   def set_table_options(options, &block)
     @options = {
       legend: nil,
-      col_legend: lambda(&:to_s),
-      row_legend: lambda(&:id),
-      th_attribute: ->(_col) { nil },
-      tr_attribute: ->(_row) { nil },
+      col_legend: ->(x) { x.to_s },
+      row_legend: ->(x) { x.id },
+      th_attribute: ->(_col) {},
+      tr_attribute: ->(_row) {},
 
       table_class: 'skeleton',
       cell_proc: block || ->(row, col) { "<td>#{row} #{col}</td>" }

@@ -1,10 +1,7 @@
-require 'rubygems'
-require 'test/unit'
-require File.expand_path('../test_helper', __FILE__)
+require 'test_helper'
 require File.expand_path(File.dirname(__FILE__) + "../../lib/html_skeleton")
 
-class HtmlSkeletonCalendarTest < Test::Unit::TestCase
-
+class HtmlSkeletonCalendarTest < ActiveSupport::TestCase
   def test_html_calendar
     cal = a_calendar
     assert_not_nil cal
@@ -33,7 +30,7 @@ class HtmlSkeletonCalendarTest < Test::Unit::TestCase
   def test_abbrev
     cal = a_calendar
     assert_match %r{>Mo<}, cal
-    assert_not_match %r{>Monday<}, cal
+    refute_match %r{>Monday<}, cal
     assert_match %r{>Monday<}, a_calendar(abbrev: 0..5)
   end
 
@@ -54,7 +51,6 @@ class HtmlSkeletonCalendarTest < Test::Unit::TestCase
     assert_match %r{<tr class="dayName">\s*<th [^>]*scope="col"><abbr title="Sunday">Su}, a_calendar(first_day_of_week: 0)
   end
 
-
  private
   def a_calendar(options = {})
     HtmlSkeleton.new.calendar({year: 2012}.merge options)
@@ -68,5 +64,4 @@ class HtmlSkeletonCalendarTest < Test::Unit::TestCase
     now = Time.now
     HtmlSkeleton.new.calendar({ year: now.year, month: now.month }.merge options)
   end
-
 end

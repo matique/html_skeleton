@@ -91,8 +91,8 @@ Examples
 Default Options
 ---------------
     legend: nil,
-    col_legend:   lambda(&:to_s),
-    row_legend:   lambda(&:id),
+    col_legend:   ->(x) { x.to_s },
+    row_legend:   ->(x) { x.id },
     th_attribute: ->(col) { nil },
     tr_attribute: ->(row) { nil },
     table_class:  'skeleton',

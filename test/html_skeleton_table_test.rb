@@ -1,11 +1,9 @@
-require 'rubygems'
-require 'test/unit'
-require File.expand_path('../test_helper', __FILE__)
+require 'test_helper'
 require File.expand_path(File.dirname(__FILE__) + "../../lib/html_skeleton")
 
 User = Struct.new(:id, :name, :email)
 
-class HtmlSkeletonTableTest < Test::Unit::TestCase
+class HtmlSkeletonTableTest < ActiveSupport::TestCase
 
   def test_html_table
     tab = a_table
@@ -54,7 +52,6 @@ class HtmlSkeletonTableTest < Test::Unit::TestCase
     assert_css_class(tab, 'tr', 'odd')
     assert_css_class(tab, 'tr', 'even')
   end
-
 
  private
   def a_table(options = {})
