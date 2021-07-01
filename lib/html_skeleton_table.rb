@@ -1,14 +1,15 @@
 # frozen_string_literal: true
 
-require 'date'
+require "date"
 
 # table methods ######################################################
 class HtmlSkeleton
   protected
+
   def table_header(cols)
-    legend       = @options[:legend]
+    legend = @options[:legend]
     th_attribute = @options[:th_attribute]
-    return '' unless legend
+    return "" unless legend
 
     proc = @options[:col_legend]
     col_header = cols.collect { |col|
@@ -18,11 +19,11 @@ class HtmlSkeleton
   end
 
   def table_body(rows, cols)
-    legend       = @options[:legend]
-    row_legend   = @options[:row_legend]
+    legend = @options[:legend]
+    row_legend = @options[:row_legend]
     tr_attribute = @options[:tr_attribute]
     rows.collect { |row|
-      rlegend = ''
+      rlegend = ""
       rlegend = %(<td class="legend">#{row_legend.call(row)}</td>) if legend
       cells = table_row(row, cols)
       %(<tr #{tr_attribute.call(row)}>#{rlegend}#{cells}</tr>)
@@ -31,6 +32,6 @@ class HtmlSkeleton
 
   def table_row(row, cols)
     cell_proc = @options[:cell_proc]
-    cols.collect { |col|  cell_proc.call(row, col) }.join
+    cols.collect { |col| cell_proc.call(row, col) }.join
   end
 end
