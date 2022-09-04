@@ -3,8 +3,8 @@ Gem::Specification.new do |s|
   s.version = "0.5.3" # 2021-06-21
 
   s.author = "Dittmar Krall"
-  s.email = "dittmar.krall@matique.de"
-  s.homepage = "http://matique.de"
+  s.email = "dittmar.krall@matiq.com"
+  s.homepage = "http://matiq.com"
   s.license = "MIT"
 
   s.summary = "A simple helper for creating HTML calendars and tables"
@@ -21,7 +21,6 @@ Gem::Specification.new do |s|
     "lib/html_skeleton_calendar.rb",
     "lib/html_skeleton_table.rb",
     "README.md", "MIT-LICENSE"]
-  s.test_files = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.require_paths = ["lib"]
 
   s.metadata["source_code_uri"] = "https://github.com/matique/html_skeleton"
