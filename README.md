@@ -1,5 +1,5 @@
-HtmlSkeleton
-============
+# HtmlSkeleton
+
 [![Gem Version](https://badge.fury.io/rb/html_skeleton.png)](http://badge.fury.io/rb/html_skeleton)
 
 HtmlSkeleton provides the frame for a calendar or a table,
@@ -8,13 +8,14 @@ Filling the skeleton is done via parameters and, in particular,
 with procs (Proc.new, lambda).
 See below Default Options.
 
-Install
--------
+## Installation
 
-    gem 'html_skeleton'
-
-    rake   # for testing
-
+As usual:
+```ruby
+# Gemfile
+gem "html_skeleton"
+```
+and run "bundle install".
 
 Calendar
 ========
@@ -110,4 +111,9 @@ Curious?
     github.com/watu/table_builder
     ruby-toolbox.com/projects/tableasy
 
-Copyright (c) 2012-2019 [Dittmar Krall], released under the MIT license.
+## Miscellaneous
+
+Copyright (c) 2012-2022 Dittmar Krall (www.matiq.com),
+released under the MIT license:
+
+* https://opensource.org/licenses/MIT
