@@ -36,7 +36,7 @@ class HtmlSkeletonCalendarTest < ActiveSupport::TestCase
 
   def test_cell_block
     cal = HtmlSkeleton.new.calendar(year: 2012) { |d|
-      d.day == 15 ? "<bingo></bingo>" : d.day.to_s
+      (d.day == 15) ? "<bingo></bingo>" : d.day.to_s
     }
     assert_tag_count(cal, "bingo", 12)
   end

@@ -21,12 +21,12 @@ class HtmlSkeletonTableTest < ActiveSupport::TestCase
 
   def test_cell_block
     tab = HtmlSkeleton.new.table(%w[a bb ccc], %w[1 22]) { |row, col|
-      col == "1" ? "<bingo></bingo>" : ""
+      (col == "1") ? "<bingo></bingo>" : ""
     }
     assert_tag_count(tab, "bingo", 3)
 
     tab = HtmlSkeleton.new.table(%w[a bb ccc], %w[1 22]) { |row, col|
-      row == "bb" ? "<bingo></bingo>" : ""
+      (row == "bb") ? "<bingo></bingo>" : ""
     }
     assert_tag_count(tab, "bingo", 2)
   end
