@@ -66,6 +66,6 @@ class HtmlSkeleton
   end
 
   def days_between(first, second)
-    first > second ? second + (7 - first) : second - first
+    (first > second) ? second + (7 - first) : second - first
   end
 end

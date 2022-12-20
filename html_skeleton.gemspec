@@ -1,6 +1,8 @@
+require_relative "lib/skeleton/version"
+
 Gem::Specification.new do |s|
   s.name = "html_skeleton"
-  s.version = "0.5.3" # 2021-06-21
+  s.version = Skeleton::VERSION
 
   s.author = "Dittmar Krall"
   s.email = "dittmar.krall@matiq.com"
