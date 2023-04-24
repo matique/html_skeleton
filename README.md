@@ -34,7 +34,7 @@ HtmlSkeleton.new.calendar year: 2012       # calendar for year 2012
 HtmlSkeleton.new.calendar year: 2012, month: 8  # calendar for August 2012
 
 HtmlSkeleton.new.calendar {|date|
-  link ="/#{controller_name}/toggle/#{@resource.id}?date=#{date}"
+  link = "/#{controller_name}/toggle/#{@resource.id}?date=#{date}"
   style = @resource.holidays.include?(date.to_s) ?
            'font-weight:bold; color:red' : ''
   %Q{ <a style="#{style}" href="#{link}"> #{date.day.to_s} </a>}
@@ -118,7 +118,7 @@ cell_proc:    block || ->(row, col) { "<td>#{row} #{col}</td>"}
 
 ## Miscellaneous
 
-Copyright (c) 2012-2022 Dittmar Krall (www.matiq.com),
+Copyright (c) 2012-2023 Dittmar Krall (www.matiq.com),
 released under the MIT license:
 
 * https://opensource.org/licenses/MIT

@@ -26,7 +26,4 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   s.metadata["source_code_uri"] = "https://github.com/matique/html_skeleton"
-
-  s.add_development_dependency "bundler"
-  s.add_development_dependency "rake"
 end
