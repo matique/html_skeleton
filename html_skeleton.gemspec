@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
 
   s.author = "Dittmar Krall"
   s.email = "dittmar.krall@matiq.com"
-  s.homepage = "http://matiq.com"
+  s.homepage = "https://github.com/matique/html_skeleton"
   s.license = "MIT"
 
   s.summary = "A simple helper for creating HTML calendars and tables"
@@ -25,5 +25,5 @@ Gem::Specification.new do |s|
     "README.md", "MIT-LICENSE"]
   s.require_paths = ["lib"]
 
-  s.metadata["source_code_uri"] = "https://github.com/matique/html_skeleton"
+  s.add_development_dependency "minitest"
 end

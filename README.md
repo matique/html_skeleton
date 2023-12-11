@@ -1,6 +1,7 @@
 # HtmlSkeleton
 
 [![Gem Version](https://badge.fury.io/rb/html_skeleton.png)](http://badge.fury.io/rb/html_skeleton)
+[![GEM Downloads](https://img.shields.io/gem/dt/html_skeleton?color=168AFE&logo=ruby&logoColor=FE1616)](https://rubygems.org/gems/html_skeleton)
 
 HtmlSkeleton provides the frame for a calendar or a table,
 i.e. no loops are required to build up the HTML structure.
@@ -119,6 +120,4 @@ cell_proc:    block || ->(row, col) { "<td>#{row} #{col}</td>"}
 ## Miscellaneous
 
 Copyright (c) 2012-2023 Dittmar Krall (www.matiq.com),
-released under the MIT license:
-
-* https://opensource.org/licenses/MIT
+released under the [MIT license](https://opensource.org/licenses/MIT).
