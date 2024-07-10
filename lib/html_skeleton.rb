@@ -7,16 +7,16 @@ require "html_skeleton_table"
 class HtmlSkeleton
   attr_reader :options
 
-  def calendar(options = {}, &block)
-    set_calendar_options(options, &block)
+  def calendar(options = {}, &)
+    set_calendar_options(options, &)
     month = @options[:month]
     frame = month ? "div" : "table"
     body = month ? a_month(@options[:year], month) : a_year(@options[:year])
     %(<#{frame} class="#{@options[:calendar_class]}"> #{body} </#{frame}>)
   end
 
-  def table(rows, cols, options = {}, &block)
-    set_table_options(options, &block)
+  def table(rows, cols, options = {}, &)
+    set_table_options(options, &)
     <<~TABLE
       <table class="#{@options[:table_class]}">
         #{table_header(cols)}
