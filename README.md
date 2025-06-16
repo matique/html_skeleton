@@ -1,10 +1,10 @@
 # HtmlSkeleton
 
-[![Gem Version](https://badge.fury.io/rb/html_skeleton.svg)](http://badge.fury.io/rb/html_skeleton)
-[![GEM Downloads](https://img.shields.io/gem/dt/html_skeleton?color=168AFE&logo=ruby&logoColor=FE1616)](https://rubygems.org/gems/html_skeleton)
-[![rake](https://github.com/matique/html_skeleton/actions/workflows/rake.yml/badge.svg)](https://github.com/matique/html_skeleton/actions/workflows/rake.yml)
-[![Ruby Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://github.com/standardrb/standard)
-[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](http://choosealicense.com/licenses/mit/)
+[![Gem Version](https://img.shields.io/gem/v/html_skeleton?color=168AFE&logo=rubygems&logoColor=FE1616)](https://rubygems.org/gems/html_skeleton)
+[![Downloads](https://img.shields.io/gem/dt/html_skeleton?color=168AFE&logo=rubygems&logoColor=FE1616)](https://rubygems.org/gems/html_skeleton)
+[![GitHub Build](https://img.shields.io/github/actions/workflow/status/matique/html_skeleton/rake.yml?logo=github)](https://github.com/matique/html_skeleton/actions/workflows/rake.yml)
+[![Ruby Style Guide](https://img.shields.io/badge/code_style-standard-168AFE.svg)](https://github.com/standardrb/standard)
+[![MIT License](https://img.shields.io/badge/license-MIT-168AFE.svg)](http://choosealicense.com/licenses/mit/)
 
 HtmlSkeleton provides the frame for a calendar or a table,
 i.e. no loops are required to build up the HTML structure.
