@@ -1,5 +1,5 @@
 require "test_helper"
-require File.expand_path(File.dirname(__FILE__) + "../../lib/html_skeleton")
+require_relative "../lib/html_skeleton"
 
 class HtmlSkeletonCalendarTest < ActiveSupport::TestCase
   def test_html_calendar
