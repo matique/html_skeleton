@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
     "lib/html_skeleton_table.rb",
     "README.md", "MIT-LICENSE"]
   s.require_paths = ["lib"]
-  s.required_ruby_version = "~> 3"
+  s.required_ruby_version = ">= 3"
 
   s.add_development_dependency "minitest"
 end
